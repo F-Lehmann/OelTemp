@@ -114,7 +114,7 @@ double measureVolt(){
   }
   double Vout = (((double)sum/16)/adcMax)*Vs;
   double Vin = (Vout*(R1+R2))/R2;
-  return Vin;
+  return Vin + 1.0; // +1 für Errorcorrection
 }
 
 void setup() {
