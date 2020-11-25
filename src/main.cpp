@@ -4,6 +4,8 @@
 
 #define TEMPPIN 32
 #define VOLTPIN 33
+#define OFFSET_X 0
+#define OFFSET_Y 5
 
 TFT_eSPI tft = TFT_eSPI();
 
@@ -27,54 +29,54 @@ void drawUI(){
   tft.fillScreen(0x0);
 #pragma region Temp
   //Scala
-  tft.drawNumber(200,0,0);
-  tft.drawNumber(150,0,15);
-  tft.drawNumber(100,0,31);
-  tft.drawNumber(50,6,47);
-  tft.drawNumber(0,12,63);
+  tft.drawNumber(200,0 + OFFSET_X,0 + OFFSET_Y);
+  tft.drawNumber(150,0 + OFFSET_X,15 + OFFSET_Y);
+  tft.drawNumber(100,0 + OFFSET_X,31 + OFFSET_Y);
+  tft.drawNumber(50,6 + OFFSET_X,47 + OFFSET_Y);
+  tft.drawNumber(0,12 + OFFSET_X,63 + OFFSET_Y);
 
   //Achsen
-  tft.drawLine(20,3,20,66,TFT_WHITE);
-  tft.drawLine(20,66,123,66,TFT_WHITE);
+  tft.drawLine(20 + OFFSET_X,3 + OFFSET_Y,20 + OFFSET_X,66 + OFFSET_Y,TFT_WHITE);
+  tft.drawLine(20 + OFFSET_X,66 + OFFSET_Y,123 + OFFSET_X,66 + OFFSET_Y,TFT_WHITE);
 
   //strichelchen Y
-  tft.drawLine(20,3,23,3,TFT_WHITE);
-  tft.drawLine(20,18,23,18,TFT_WHITE);
-  tft.drawLine(20,34,23,34,TFT_WHITE);
-  tft.drawLine(20,50,23,50,TFT_WHITE);
+  tft.drawLine(20 + OFFSET_X,3 + OFFSET_Y,23 + OFFSET_X,3 + OFFSET_Y,TFT_WHITE);
+  tft.drawLine(20 + OFFSET_X,18 + OFFSET_Y,23 + OFFSET_X,18 + OFFSET_Y,TFT_WHITE);
+  tft.drawLine(20 + OFFSET_X,34 + OFFSET_Y,23 + OFFSET_X,34 + OFFSET_Y,TFT_WHITE);
+  tft.drawLine(20 + OFFSET_X,50 + OFFSET_Y,23 + OFFSET_X,50 + OFFSET_Y,TFT_WHITE);
 
   //strichelchen X
-  tft.drawLine(40,66,40,63,TFT_WHITE);
-  tft.drawLine(60,66,60,63,TFT_WHITE);
-  tft.drawLine(80,66,80,63,TFT_WHITE);
-  tft.drawLine(100,66,100,63,TFT_WHITE);
-  tft.drawLine(120,66,120,63,TFT_WHITE);
+  tft.drawLine(40 + OFFSET_X,66 + OFFSET_Y,40 + OFFSET_X,63 + OFFSET_Y,TFT_WHITE);
+  tft.drawLine(60 + OFFSET_X,66 + OFFSET_Y,60 + OFFSET_X,63 + OFFSET_Y,TFT_WHITE);
+  tft.drawLine(80 + OFFSET_X,66 + OFFSET_Y,80 + OFFSET_X,63 + OFFSET_Y,TFT_WHITE);
+  tft.drawLine(100 + OFFSET_X,66 + OFFSET_Y,100 + OFFSET_X,63 + OFFSET_Y,TFT_WHITE);
+  tft.drawLine(120 + OFFSET_X,66 + OFFSET_Y,120 + OFFSET_X,63 + OFFSET_Y,TFT_WHITE);
 #pragma endregion
   
 #pragma region Volt
   //Scala
-  tft.drawNumber(18,3,80);
-  tft.drawNumber(15,3,95);
-  tft.drawNumber(12,3,111);
-  tft.drawNumber(9,9,127);
-  tft.drawNumber(6,9,143);
+  tft.drawNumber(18,3 + OFFSET_X,80 + OFFSET_Y);
+  tft.drawNumber(15,3 + OFFSET_X,95 + OFFSET_Y);
+  tft.drawNumber(12,3 + OFFSET_X,111 + OFFSET_Y);
+  tft.drawNumber(9,9 + OFFSET_X,127 + OFFSET_Y);
+  tft.drawNumber(6,9 + OFFSET_X,143 + OFFSET_Y);
 
   //Achsen
-  tft.drawLine(20,83,20,146,TFT_WHITE);
-  tft.drawLine(20,146,123,146,TFT_WHITE);
+  tft.drawLine(20 + OFFSET_X,83 + OFFSET_Y,20 + OFFSET_X,146 + OFFSET_Y,TFT_WHITE);
+  tft.drawLine(20 + OFFSET_X,146 + OFFSET_Y,123 + OFFSET_X,146 + OFFSET_Y,TFT_WHITE);
 
   //strichelchen Y
-  tft.drawLine(20,83,23,83,TFT_WHITE);
-  tft.drawLine(20,98,23,98,TFT_WHITE);
-  tft.drawLine(20,114,23,114,TFT_WHITE);
-  tft.drawLine(20,130,23,130,TFT_WHITE);
+  tft.drawLine(20 + OFFSET_X,83 + OFFSET_Y,23 + OFFSET_X,83 + OFFSET_Y,TFT_WHITE);
+  tft.drawLine(20 + OFFSET_X,98 + OFFSET_Y,23 + OFFSET_X,98 + OFFSET_Y,TFT_WHITE);
+  tft.drawLine(20 + OFFSET_X,114 + OFFSET_Y,23 + OFFSET_X,114 + OFFSET_Y,TFT_WHITE);
+  tft.drawLine(20 + OFFSET_X,130 + OFFSET_Y,23 + OFFSET_X,130 + OFFSET_Y,TFT_WHITE);
 
   //strichelchen X
-  tft.drawLine(40,146,40,143,TFT_WHITE);
-  tft.drawLine(60,146,60,143,TFT_WHITE);
-  tft.drawLine(80,146,80,143,TFT_WHITE);
-  tft.drawLine(100,146,100,143,TFT_WHITE);
-  tft.drawLine(120,146,120,143,TFT_WHITE);
+  tft.drawLine(40 + OFFSET_X,146 + OFFSET_Y,40 + OFFSET_X,143 + OFFSET_Y,TFT_WHITE);
+  tft.drawLine(60 + OFFSET_X,146 + OFFSET_Y,60 + OFFSET_X,143 + OFFSET_Y,TFT_WHITE);
+  tft.drawLine(80 + OFFSET_X,146 + OFFSET_Y,80 + OFFSET_X,143 + OFFSET_Y,TFT_WHITE);
+  tft.drawLine(100 + OFFSET_X,146 + OFFSET_Y,100 + OFFSET_X,143 + OFFSET_Y,TFT_WHITE);
+  tft.drawLine(120 + OFFSET_X,146 + OFFSET_Y,120 + OFFSET_X,143 + OFFSET_Y,TFT_WHITE);
 #pragma endregion
 }
 
@@ -82,8 +84,8 @@ void drawValues(){
   drawUI();
   for (size_t i = 0; i < 100; i++)
   {
-    tft.drawPixel(20+i,66-((temp[i]/200.)*64),TFT_BLUE);
-    tft.drawPixel(20+i,146-(((volt[i]-6.)/12.)*64),TFT_BLUE);
+    tft.drawPixel(20+i+OFFSET_X,66-((temp[i]/200.)*64)+OFFSET_Y,TFT_BLUE);
+    tft.drawPixel(20+i+OFFSET_X,146-(((volt[i]-6.)/12.)*64)+OFFSET_Y,TFT_BLUE);
   }
 }
 
