@@ -129,8 +129,8 @@ void loop() {
   schieben(measureTemp(),measureVolt());
   drawValues();
   for (size_t i = 0; i < 12; i++){
-    tft.drawNumber((int)measureTemp(),105,0);
-    tft.drawFloat(measureVolt(),1,100,80);
+    tft.drawNumber((int)measureTemp(),105 + OFFSET_X,0+OFFSET_Y);
+    tft.drawFloat(measureVolt(),1,100 + OFFSET_X,80+OFFSET_Y);
     delay(1000);
   }
 }
